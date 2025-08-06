@@ -1,176 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>MBTI Personality Test</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 30px;
-      max-width: 800px;
-      margin: auto;
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-    .question label {
-      display: block;
-      margin-top: 5px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-    }
-    h2 {
-      margin-top: 40px;
-    }
-    input[type="text"] {
-      padding: 8px;
-      font-size: 16px;
-      width: 100%;
-      max-width: 400px;
-    }
+    body { font-family: Arial, sans-serif; padding: 30px; max-width: 800px; margin: auto; }
+    .question { margin-bottom: 20px; }
+    .question label { display: block; margin-top: 5px; }
+    button { padding: 10px 20px; font-size: 16px; }
+    h2 { margin-top: 40px; }
   </style>
 </head>
 <body>
   <h1>MBTI Personality Test</h1>
-
   <form id="mbtiForm">
-    <div class="question">
-      <p>Your Name:</p>
-      <input type="text" name="name" id="name" required placeholder="Enter your name" />
+
+    <!-- E vs I -->
+    <div class="question"><p>1. At a party, you:</p>
+      <label><input type="radio" name="q1" value="E" required> Interact with many, including strangers</label>
+      <label><input type="radio" name="q1" value="I"> Stick with a few people you know</label>
     </div>
 
-    <!-- 20 Questions (5 per trait pair) -->
-    <!-- E/I -->
-    <div class="question"><p>1. At a party, you:</p>
-      <label><input type="radio" name="q1" value="E" required> Interact with many</label>
-      <label><input type="radio" name="q1" value="I"> Stick with a few</label>
-    </div>
-    <div class="question"><p>2. Social events are:</p>
+    <div class="question"><p>2. You find social events:</p>
       <label><input type="radio" name="q2" value="E" required> Energising</label>
       <label><input type="radio" name="q2" value="I"> Draining</label>
     </div>
-    <div class="question"><p>3. You process problems by:</p>
-      <label><input type="radio" name="q3" value="E" required> Talking</label>
-      <label><input type="radio" name="q3" value="I"> Thinking alone</label>
+
+    <div class="question"><p>3. When thinking through a problem, you:</p>
+      <label><input type="radio" name="q3" value="E" required> Prefer talking it out</label>
+      <label><input type="radio" name="q3" value="I"> Prefer reflecting silently</label>
     </div>
-    <div class="question"><p>4. Your ideal weekend:</p>
-      <label><input type="radio" name="q4" value="E" required> With people</label>
-      <label><input type="radio" name="q4" value="I"> Peaceful alone</label>
+
+    <div class="question"><p>4. You prefer your weekends to be:</p>
+      <label><input type="radio" name="q4" value="E" required> Filled with activities and people</label>
+      <label><input type="radio" name="q4" value="I"> Quiet and restful</label>
     </div>
-    <div class="question"><p>5. You tend to:</p>
-      <label><input type="radio" name="q5" value="E" required> Start conversations</label>
+
+    <div class="question"><p>5. You are more inclined to:</p>
+      <label><input type="radio" name="q5" value="E" required> Initiate conversation</label>
       <label><input type="radio" name="q5" value="I"> Wait to be approached</label>
     </div>
 
-    <!-- S/N -->
-    <div class="question"><p>6. You focus on:</p>
-      <label><input type="radio" name="q6" value="S" required> Reality and facts</label>
-      <label><input type="radio" name="q6" value="N"> Possibilities</label>
+    <!-- S vs N -->
+    <div class="question"><p>6. You are more interested in:</p>
+      <label><input type="radio" name="q6" value="S" required> What is actual and real</label>
+      <label><input type="radio" name="q6" value="N"> What is possible and imagined</label>
     </div>
-    <div class="question"><p>7. When describing something:</p>
-      <label><input type="radio" name="q7" value="S" required> Precise and literal</label>
-      <label><input type="radio" name="q7" value="N"> Abstract and metaphorical</label>
+
+    <div class="question"><p>7. When describing something, you:</p>
+      <label><input type="radio" name="q7" value="S" required> Use concrete facts</label>
+      <label><input type="radio" name="q7" value="N"> Use metaphors and impressions</label>
     </div>
-    <div class="question"><p>8. Learning style:</p>
-      <label><input type="radio" name="q8" value="S" required> Hands-on</label>
-      <label><input type="radio" name="q8" value="N"> Conceptual</label>
+
+    <div class="question"><p>8. Do you prefer:</p>
+      <label><input type="radio" name="q8" value="S" required> Tried-and-tested methods</label>
+      <label><input type="radio" name="q8" value="N"> New ideas and innovations</label>
     </div>
+
     <div class="question"><p>9. You notice:</p>
-      <label><input type="radio" name="q9" value="S" required> Fine details</label>
-      <label><input type="radio" name="q9" value="N"> Big picture</label>
-    </div>
-    <div class="question"><p>10. Prefer stories that are:</p>
-      <label><input type="radio" name="q10" value="S" required> Realistic</label>
-      <label><input type="radio" name="q10" value="N"> Imaginative</label>
+      <label><input type="radio" name="q9" value="S" required> Details and specifics</label>
+      <label><input type="radio" name="q9" value="N"> Patterns and connections</label>
     </div>
 
-    <!-- T/F -->
-    <div class="question"><p>11. When deciding:</p>
-      <label><input type="radio" name="q11" value="T" required> Logical analysis</label>
-      <label><input type="radio" name="q11" value="F"> Personal values</label>
+    <div class="question"><p>10. You prefer stories that:</p>
+      <label><input type="radio" name="q10" value="S" required> Are realistic and down-to-earth</label>
+      <label><input type="radio" name="q10" value="N"> Are imaginative and fantastical</label>
     </div>
-    <div class="question"><p>12. Conflict style:</p>
-      <label><input type="radio" name="q12" value="T" required> Stay objective</label>
-      <label><input type="radio" name="q12" value="F"> Feel deeply</label>
+
+    <!-- T vs F -->
+    <div class="question"><p>11. You base decisions on:</p>
+      <label><input type="radio" name="q11" value="T" required> Logic and objectivity</label>
+      <label><input type="radio" name="q11" value="F"> Feelings and personal values</label>
     </div>
+
+    <div class="question"><p>12. In conflict, you tend to:</p>
+      <label><input type="radio" name="q12" value="T" required> Stay calm and rational</label>
+      <label><input type="radio" name="q12" value="F"> Get emotionally involved</label>
+    </div>
+
     <div class="question"><p>13. You value:</p>
-      <label><input type="radio" name="q13" value="T" required> Justice</label>
-      <label><input type="radio" name="q13" value="F"> Compassion</label>
+      <label><input type="radio" name="q13" value="T" required> Fairness and truth</label>
+      <label><input type="radio" name="q13" value="F"> Harmony and compassion</label>
     </div>
+
     <div class="question"><p>14. Others see you as:</p>
-      <label><input type="radio" name="q14" value="T" required> Direct</label>
-      <label><input type="radio" name="q14" value="F"> Supportive</label>
-    </div>
-    <div class="question"><p>15. You usually:</p>
-      <label><input type="radio" name="q15" value="T" required> Challenge others</label>
-      <label><input type="radio" name="q15" value="F"> Encourage others</label>
+      <label><input type="radio" name="q14" value="T" required> Firm and direct</label>
+      <label><input type="radio" name="q14" value="F"> Gentle and caring</label>
     </div>
 
-    <!-- J/P -->
+    <div class="question"><p>15. You are more likely to:</p>
+      <label><input type="radio" name="q15" value="T" required> Challenge ideas</label>
+      <label><input type="radio" name="q15" value="F"> Support others emotionally</label>
+    </div>
+
+    <!-- J vs P -->
     <div class="question"><p>16. You prefer:</p>
-      <label><input type="radio" name="q16" value="J" required> Structure</label>
-      <label><input type="radio" name="q16" value="P"> Flexibility</label>
-    </div>
-    <div class="question"><p>17. Workstyle:</p>
-      <label><input type="radio" name="q17" value="J" required> Stick to deadlines</label>
-      <label><input type="radio" name="q17" value="P"> Improvise</label>
-    </div>
-    <div class="question"><p>18. Start tasks with:</p>
-      <label><input type="radio" name="q18" value="J" required> A plan</label>
-      <label><input type="radio" name="q18" value="P"> An idea</label>
-    </div>
-    <div class="question"><p>19. You prefer when:</p>
-      <label><input type="radio" name="q19" value="J" required> Things are decided</label>
-      <label><input type="radio" name="q19" value="P"> Options are open</label>
-    </div>
-    <div class="question"><p>20. You tend to:</p>
-      <label><input type="radio" name="q20" value="J" required> Finish before relaxing</label>
-      <label><input type="radio" name="q20" value="P"> Mix work and breaks</label>
+      <label><input type="radio" name="q16" value="J" required> Planning ahead</label>
+      <label><input type="radio" name="q16" value="P"> Going with the flow</label>
     </div>
 
-    <button type="submit">Submit</button>
+    <div class="question"><p>17. Your schedule is:</p>
+      <label><input type="radio" name="q17" value="J" required> Structured and clear</label>
+      <label><input type="radio" name="q17" value="P"> Open and flexible</label>
+    </div>
+
+    <div class="question"><p>18. When starting a project, you:</p>
+      <label><input type="radio" name="q18" value="J" required> Make a clear plan</label>
+      <label><input type="radio" name="q18" value="P"> Dive in and adapt as you go</label>
+    </div>
+
+    <div class="question"><p>19. You feel best when:</p>
+      <label><input type="radio" name="q19" value="J" required> Things are decided</label>
+      <label><input type="radio" name="q19" value="P"> Options are still open</label>
+    </div>
+
+    <div class="question"><p>20. You tend to:</p>
+      <label><input type="radio" name="q20" value="J" required> Finish tasks before relaxing</label>
+      <label><input type="radio" name="q20" value="P"> Mix tasks and leisure</label>
+    </div>
+
+    <button type="submit">See My MBTI Type</button>
   </form>
 
   <h2 id="result"></h2>
 
   <script>
-    document.getElementById('mbtiForm').addEventListener('submit', function (e) {
+    document.getElementById('mbtiForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const formData = new FormData(this);
-      const name = formData.get("name");
-      const answers = [];
-
-      for (let i = 1; i <= 20; i++) {
-        answers.push(formData.get(`q${i}`));
-      }
-
+      const answers = Array.from(formData.values());
       const counts = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+
       answers.forEach(letter => counts[letter]++);
-      const type =
-        (counts.E >= counts.I ? "E" : "I") +
-        (counts.S >= counts.N ? "S" : "N") +
-        (counts.T >= counts.F ? "T" : "F") +
-        (counts.J >= counts.P ? "J" : "P");
 
-      const data = { name, type, answers };
+      const type = 
+        (counts.E >= counts.I ? 'E' : 'I') +
+        (counts.S >= counts.N ? 'S' : 'N') +
+        (counts.T >= counts.F ? 'T' : 'F') +
+        (counts.J >= counts.P ? 'J' : 'P');
 
-      const scriptURL = "https://script.google.com/macros/s/AKfycbz0pyBoNhIvxeGLZGUbGGyaA6nw9gEoZBQqCa-MsNdghprJcZhmh0Ec0qQ_GhmuuVWA/exec";
-
-      fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
-      })
-        .then(() => {
-          document.getElementById("result").innerText = `${name}, your MBTI type is: ${type}`;
-        })
-        .catch((error) => {
-          document.getElementById("result").innerText = "Something went wrong. Please try again.";
-          console.error("Error!", error.message);
-        });
+      document.getElementById('result').innerText = `Your MBTI type is: ${type}`;
     });
   </script>
 </body>
