@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple MBTI Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 30px; max-width: 600px; margin: auto; }
+    .question { margin-bottom: 20px; }
+    .question label { display: block; margin-top: 5px; }
+    button { padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>MBTI Test</h1>
+  <form id="mbtiForm">
+    <div class="question">
+      <p>1. In social settings, do you prefer to:</p>
+      <label><input type="radio" name="q1" value="E" required> Talk to many people</label>
+      <label><input type="radio" name="q1" value="I"> Talk to a few close friends</label>
+    </div>
+
+    <div class="question">
+      <p>2. Do you gain energy from:</p>
+      <label><input type="radio" name="q2" value="E" required> Being around people</label>
+      <label><input type="radio" name="q2" value="I"> Spending time alone</label>
+    </div>
+
+    <div class="question">
+      <p>3. Do you trust:</p>
+      <label><input type="radio" name="q3" value="S" required> Realistic facts and evidence</label>
+      <label><input type="radio" name="q3" value="N"> Intuition and ideas</label>
+    </div>
+
+    <div class="question">
+      <p>4. When learning, do you prefer:</p>
+      <label><input type="radio" name="q4" value="S" required> Concrete examples</label>
+      <label><input type="radio" name="q4" value="N"> Abstract theories</label>
+    </div>
+
+    <div class="question">
+      <p>5. When deciding, do you lean toward:</p>
+      <label><input type="radio" name="q5" value="T" required> Logic and consistency</label>
+      <label><input type="radio" name="q5" value="F"> Empathy and compassion</label>
+    </div>
+
+    <div class="question">
+      <p>6. What is more important?</p>
+      <label><input type="radio" name="q6" value="T" required> Being just and fair</label>
+      <label><input type="radio" name="q6" value="F"> Being kind and understanding</label>
+    </div>
+
+    <div class="question">
+      <p>7. Do you prefer:</p>
+      <label><input type="radio" name="q7" value="J" required> Planned and organized life</label>
+      <label><input type="radio" name="q7" value="P"> Flexible and spontaneous lifestyle</label>
+    </div>
+
+    <div class="question">
+      <p>8. When working, do you like to:</p>
+      <label><input type="radio" name="q8" value="J" required> Finish tasks before relaxing</label>
+      <label><input type="radio" name="q8" value="P"> Mix tasks and breaks freely</label>
+    </div>
+
+    <button type="submit">See My MBTI Type</button>
+  </form>
+
+  <h2 id="result"></h2>
+
+  <script>
+    document.getElementById('mbtiForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const answers = Array.from(new FormData(this).values());
+      const counts = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+
+      answers.forEach(letter => counts[letter]++);
+
+      const type = 
+        (counts.E >= counts.I ? 'E' : 'I') +
+        (counts.S >= counts.N ? 'S' : 'N') +
+        (counts.T >= counts.F ? 'T' : 'F') +
+        (counts.J >= counts.P ? 'J' : 'P');
+
+      document.getElementById('result').innerText = `Your MBTI type is: ${type}`;
+    });
+  </script>
+</body>
+</html>
