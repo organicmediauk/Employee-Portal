@@ -2,63 +2,121 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Simple MBTI Test</title>
+  <title>MBTI Personality Test</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 30px; max-width: 600px; margin: auto; }
+    body { font-family: Arial, sans-serif; padding: 30px; max-width: 800px; margin: auto; }
     .question { margin-bottom: 20px; }
     .question label { display: block; margin-top: 5px; }
     button { padding: 10px 20px; font-size: 16px; }
+    h2 { margin-top: 40px; }
   </style>
 </head>
 <body>
-  <h1>MBTI Test</h1>
+  <h1>MBTI Personality Test</h1>
   <form id="mbtiForm">
-    <div class="question">
-      <p>1. In social settings, do you prefer to:</p>
-      <label><input type="radio" name="q1" value="E" required> Talk to many people</label>
-      <label><input type="radio" name="q1" value="I"> Talk to a few close friends</label>
+
+    <!-- E vs I -->
+    <div class="question"><p>1. At a party, you:</p>
+      <label><input type="radio" name="q1" value="E" required> Interact with many, including strangers</label>
+      <label><input type="radio" name="q1" value="I"> Stick with a few people you know</label>
     </div>
 
-    <div class="question">
-      <p>2. Do you gain energy from:</p>
-      <label><input type="radio" name="q2" value="E" required> Being around people</label>
-      <label><input type="radio" name="q2" value="I"> Spending time alone</label>
+    <div class="question"><p>2. You find social events:</p>
+      <label><input type="radio" name="q2" value="E" required> Energising</label>
+      <label><input type="radio" name="q2" value="I"> Draining</label>
     </div>
 
-    <div class="question">
-      <p>3. Do you trust:</p>
-      <label><input type="radio" name="q3" value="S" required> Realistic facts and evidence</label>
-      <label><input type="radio" name="q3" value="N"> Intuition and ideas</label>
+    <div class="question"><p>3. When thinking through a problem, you:</p>
+      <label><input type="radio" name="q3" value="E" required> Prefer talking it out</label>
+      <label><input type="radio" name="q3" value="I"> Prefer reflecting silently</label>
     </div>
 
-    <div class="question">
-      <p>4. When learning, do you prefer:</p>
-      <label><input type="radio" name="q4" value="S" required> Concrete examples</label>
-      <label><input type="radio" name="q4" value="N"> Abstract theories</label>
+    <div class="question"><p>4. You prefer your weekends to be:</p>
+      <label><input type="radio" name="q4" value="E" required> Filled with activities and people</label>
+      <label><input type="radio" name="q4" value="I"> Quiet and restful</label>
     </div>
 
-    <div class="question">
-      <p>5. When deciding, do you lean toward:</p>
-      <label><input type="radio" name="q5" value="T" required> Logic and consistency</label>
-      <label><input type="radio" name="q5" value="F"> Empathy and compassion</label>
+    <div class="question"><p>5. You are more inclined to:</p>
+      <label><input type="radio" name="q5" value="E" required> Initiate conversation</label>
+      <label><input type="radio" name="q5" value="I"> Wait to be approached</label>
     </div>
 
-    <div class="question">
-      <p>6. What is more important?</p>
-      <label><input type="radio" name="q6" value="T" required> Being just and fair</label>
-      <label><input type="radio" name="q6" value="F"> Being kind and understanding</label>
+    <!-- S vs N -->
+    <div class="question"><p>6. You are more interested in:</p>
+      <label><input type="radio" name="q6" value="S" required> What is actual and real</label>
+      <label><input type="radio" name="q6" value="N"> What is possible and imagined</label>
     </div>
 
-    <div class="question">
-      <p>7. Do you prefer:</p>
-      <label><input type="radio" name="q7" value="J" required> Planned and organized life</label>
-      <label><input type="radio" name="q7" value="P"> Flexible and spontaneous lifestyle</label>
+    <div class="question"><p>7. When describing something, you:</p>
+      <label><input type="radio" name="q7" value="S" required> Use concrete facts</label>
+      <label><input type="radio" name="q7" value="N"> Use metaphors and impressions</label>
     </div>
 
-    <div class="question">
-      <p>8. When working, do you like to:</p>
-      <label><input type="radio" name="q8" value="J" required> Finish tasks before relaxing</label>
-      <label><input type="radio" name="q8" value="P"> Mix tasks and breaks freely</label>
+    <div class="question"><p>8. Do you prefer:</p>
+      <label><input type="radio" name="q8" value="S" required> Tried-and-tested methods</label>
+      <label><input type="radio" name="q8" value="N"> New ideas and innovations</label>
+    </div>
+
+    <div class="question"><p>9. You notice:</p>
+      <label><input type="radio" name="q9" value="S" required> Details and specifics</label>
+      <label><input type="radio" name="q9" value="N"> Patterns and connections</label>
+    </div>
+
+    <div class="question"><p>10. You prefer stories that:</p>
+      <label><input type="radio" name="q10" value="S" required> Are realistic and down-to-earth</label>
+      <label><input type="radio" name="q10" value="N"> Are imaginative and fantastical</label>
+    </div>
+
+    <!-- T vs F -->
+    <div class="question"><p>11. You base decisions on:</p>
+      <label><input type="radio" name="q11" value="T" required> Logic and objectivity</label>
+      <label><input type="radio" name="q11" value="F"> Feelings and personal values</label>
+    </div>
+
+    <div class="question"><p>12. In conflict, you tend to:</p>
+      <label><input type="radio" name="q12" value="T" required> Stay calm and rational</label>
+      <label><input type="radio" name="q12" value="F"> Get emotionally involved</label>
+    </div>
+
+    <div class="question"><p>13. You value:</p>
+      <label><input type="radio" name="q13" value="T" required> Fairness and truth</label>
+      <label><input type="radio" name="q13" value="F"> Harmony and compassion</label>
+    </div>
+
+    <div class="question"><p>14. Others see you as:</p>
+      <label><input type="radio" name="q14" value="T" required> Firm and direct</label>
+      <label><input type="radio" name="q14" value="F"> Gentle and caring</label>
+    </div>
+
+    <div class="question"><p>15. You are more likely to:</p>
+      <label><input type="radio" name="q15" value="T" required> Challenge ideas</label>
+      <label><input type="radio" name="q15" value="F"> Support others emotionally</label>
+    </div>
+
+    <!-- J vs P -->
+    <div class="question"><p>16. You prefer:</p>
+      <label><input type="radio" name="q16" value="J" required> Planning ahead</label>
+      <label><input type="radio" name="q16" value="P"> Going with the flow</label>
+    </div>
+
+    <div class="question"><p>17. Your schedule is:</p>
+      <label><input type="radio" name="q17" value="J" required> Structured and clear</label>
+      <label><input type="radio" name="q17" value="P"> Open and flexible</label>
+    </div>
+
+    <div class="question"><p>18. When starting a project, you:</p>
+      <label><input type="radio" name="q18" value="J" required> Make a clear plan</label>
+      <label><input type="radio" name="q18" value="P"> Dive in and adapt as you go</label>
+    </div>
+
+    <div class="question"><p>19. You feel best when:</p>
+      <label><input type="radio" name="q19" value="J" required> Things are decided</label>
+      <label><input type="radio" name="q19" value="P"> Options are still open</label>
+    </div>
+
+    <div class="question"><p>20. You tend to:</p>
+      <label><input type="radio" name="q20" value="J" required> Finish tasks before relaxing</label>
+      <label><input type="radio" name="q20" value="P"> Mix tasks and leisure</label>
     </div>
 
     <button type="submit">See My MBTI Type</button>
@@ -69,8 +127,8 @@
   <script>
     document.getElementById('mbtiForm').addEventListener('submit', function(e) {
       e.preventDefault();
-
-      const answers = Array.from(new FormData(this).values());
+      const formData = new FormData(this);
+      const answers = Array.from(formData.values());
       const counts = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
 
       answers.forEach(letter => counts[letter]++);
